@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#21134f">
+  <title>MathLearn — Belajar Matematika</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <div class="login-art">
+      <div class="math-symbol symbol-one">∑</div>
+      <div class="math-symbol symbol-two">π</div>
+      <div class="math-symbol symbol-three">f(x)</div>
+      <div class="art-copy">
+        <span class="eyebrow">BELAJAR • PAHAMI • KUASAI</span>
+        <h1>Matematika jadi<br><span>lebih masuk akal.</span></h1>
+        <p>Pahami alasan di balik rumusnya. Latih kemampuanmu dengan soal yang disertai pembahasan.</p>
+        <div class="art-note">✦ Belajar pelan-pelan, paham selangkah demi selangkah.</div>
+      </div>
+    </div>
+    <div class="login-card">
+      <div class="brand"><span class="brand-mark">M</span><span>Math<span>Learn</span></span></div>
+      <p class="muted">Teman belajar matematika SMA kelas X–XII.</p>
+      <form id="loginForm">
+        <label for="studentName">Nama kamu</label>
+        <input id="studentName" name="studentName" type="text" maxlength="45" placeholder="Masukkan nama lengkap" autocomplete="name" required>
+        <label class="class-label">Kelas</label>
+        <div class="class-options">
+          <label class="class-option"><input type="radio" name="studentClass" value="10" required><span class="class-number">10</span><span>Kelas X</span></label>
+          <label class="class-option"><input type="radio" name="studentClass" value="11"><span class="class-number">11</span><span>Kelas XI</span></label>
+          <label class="class-option"><input type="radio" name="studentClass" value="12"><span class="class-number">12</span><span>Kelas XII</span></label>
+        </div>
+        <button class="primary-button login-button" type="submit">Masuk ke MathLearn <span>→</span></button>
+      </form>
+      <p class="privacy-note">Progres belajar tersimpan di perangkat ini.</p>
+    </div>
+  </section>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="brand side-brand" data-view="home"><span class="brand-mark">M</span><span>Math<span>Learn</span></span></a>
+      <div class="side-label">MENU BELAJAR</div>
+      <nav class="nav-menu">
+        <button class="nav-item active" data-view="home"><span>⌂</span> Beranda</button>
+        <button class="nav-item" data-view="materials"><span>▤</span> Materi</button>
+        <button class="nav-item" data-view="examples"><span>ƒ</span> Contoh Soal</button>
+        <button class="nav-item" data-view="practice"><span>✎</span> Latihan Soal</button>
+        <button class="nav-item" data-view="progress"><span>▥</span> Nilai & Progres</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-profile"><div class="avatar" id="avatarInitial">S</div><div><strong id="sidebarName">Pelajar</strong><span id="sidebarClass">Kelas 10</span></div></div>
+        <button id="changeProfile" class="text-button">Ganti profil ↗</button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-button mobile-only" aria-label="Buka menu">☰</button>
+        <div><div class="top-kicker">RUANG BELAJAR MATEMATIKA</div><div id="currentSection" class="top-title">Beranda</div></div>
+        <div class="top-actions"><span id="todayLabel" class="date-label"></span><button id="themeToggle" class="icon-button" aria-label="Ganti tema">◐</button></div>
+      </header>
+      <div id="pageContent" class="page-content"></div>
+      <footer class="footer">MathLearn <span>•</span> Belajar sedikit demi sedikit, hasilkan kemajuan.</footer>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel"><button class="modal-close" data-close-modal aria-label="Tutup">×</button><div id="modalContent"></div></div>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
